@@ -68,7 +68,6 @@ describe("SaveEther Contract", function () {
 
   describe("Withdraw", function () {
     it("Should not be called by address zero", async () => {
-      // Connect to the contract using the signer
       const ZeroAddress = "0x0000000000000000000000000000000000000000";
 
       const [signer] = await ethers.getSigners();
@@ -77,16 +76,14 @@ describe("SaveEther Contract", function () {
     it("Should be reverted if the amount is 0", async () => {
       const amount = 0;
       const [signer] = await ethers.getSigners();
-      const connectedSaveErc20 = saveEther.connect(signer);
-      await expect;
-    });
-  });
 
-  describe("Check Balance", function () {
-    it("should return contract balance", async function () {
-      const contractBal = await saveEther.checkContractBalance();
-      expect(contractBal).to.not.be.undefined;
-      console.log("Contract Balance:", contractBal.toString());
+      describe("Check Balance", function () {
+        it("should return contract balance", async function () {
+          const contractBal = await saveEther.checkContractBalance();
+          expect(contractBal).to.not.be.undefined;
+          console.log("Contract Balance:", contractBal.toString());
+        });
+      });
     });
   });
 });
