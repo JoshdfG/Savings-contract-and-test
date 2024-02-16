@@ -81,4 +81,12 @@ describe("SaveEther Contract", function () {
       await expect;
     });
   });
+
+  describe("Check Balance", function () {
+    it("should return contract balance", async function () {
+      const contractBal = await saveEther.checkContractBalance();
+      expect(contractBal).to.not.be.undefined;
+      console.log("Contract Balance:", contractBal.toString());
+    });
+  });
 });
